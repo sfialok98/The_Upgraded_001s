@@ -1,0 +1,9 @@
+*{
+	font-size: 20px;
+input[type=text]:focus,textarea:focus {
+   position:relative;
+   z-index: 100;/
+   box-shadow: 0px 0px 2000px 2000px rgba(220,240,0,0.6);
+}
+}
+

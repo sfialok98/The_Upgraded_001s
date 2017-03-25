@@ -1,0 +1,64 @@
+<html>
+<head>
+<title> My Weather Map </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+	.btn-action {
+		-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    font-size: 28px;
+    border: 2px solid #4CAF50;
+    background-color: red;
+    color: black;
+    border: 2px solid #BFF; /* Green */
+	}
+	.btn-action:hover
+	{
+		background-color: #4CAF50; /* Green */
+    color: white;
+	}
+	.city{
+		background-color: #c98986;
+		padding-bottom: 15px;
+	}
+	.date{
+		background-color: #f3ffb6;
+		padding-bottom: 15px;
+	}
+	.myForm{
+		background-color: #247ba0;
+		padding-bottom: 5px;
+	}
+</style>
+</head>
+<body background="green-blue-gradient.jpg">
+
+<p>
+<font size="30" color="#e2fadb"><marquee><big><b>Welcome to My Weather App</b></big></marquee></font>
+<br>
+<br>
+<br>
+<center><img src="weather.png" width="180" height="180"></center>
+<br>
+<div class="myForm">
+<form action="" method="get" autocomplete="off">
+<center>
+<div class="city">
+Name: <br />
+    <input name="city" type="text" placeholder="Please enter city"/><br />
+ </div>
+ <div class="date">
+Date: <br />
+    <input name="date" type="date" <br />
+  </div>
+<br />
+    <input name="submit" class="btn btn-action" type="button" value="Submit"/>
+</center>
+
+</form>
+</div>
+</p>
+</body>
+</html>
+
