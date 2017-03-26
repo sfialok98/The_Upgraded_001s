@@ -37,6 +37,15 @@
 		.headd{
 			font-size: 60px;
 		}	
+	.link{
+
+
+		background-color: #873d48;
+		margin-right: 400px;
+		margin-left: 400px;
+		border-radius: 10px;
+
+	}
 </style>
 </head>
 <body background="img/weather_app_background.jpg">
@@ -51,11 +60,11 @@
 <center><img src="img/weather.png" width="180" height="180"></center>
 <br>
 <div class="myForm">
-<form action="submitweather" method="get" autocomplete="off">
+<form action="" method="get" autocomplete="on">
 <center>
 <div class="city">
 Name: <br />
-    <input id="city" name="city" type="text" placeholder="Please enter city"/><br />
+    <input id="city" name="city" type="text" placeholder="Please enter city" onkeypress="myfunction()" /><br />
  </div>
 <div class="btn-class">
 <br />
@@ -63,11 +72,22 @@ Name: <br />
     <br>
     </div>
 </center>
-
 </form>
 <center><div id="show"></div></center>
 </div>
+<center>
+<h1>Or</h1>
+<div class="link">
+<a href="avg_of_cities.html" style="color: white">Check Average Weather Conditions</a>
+</div>
+</center>
 </p>
+<script >
+	function myfunction()
+	{
+
+	}
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="weather.js"></script>
 </body>

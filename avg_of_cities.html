@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Average weather Conditions</title>
+	<style type="text/css">
+	.btn-next {
+		-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    border: 2px solid #873d48;
+    background-color: #873d48;
+    color: black;
+    border: 2px solid #BFF; /* Green */
+	}
+	.btn-next:hover
+	{
+		background-color: #4CAF50; /* Green */
+    color: white;
+
+	}
+	.btn-show {
+		-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    border: 2px solid #873d48;
+    background-color: #873d48;
+    color: black;
+    border: 2px solid #BFF; /* Green */
+	}
+	.btn-show:hover
+	{
+		background-color: #4CAF50; /* Green */
+    color: white;
+
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body background="img/weather2.jpg">
+	
+	
+	<center>
+	<div class="inputs">
+		<p id="main">
+			City:  <input id="city" placeholder="Enter City" value=""></input>
+			<br/><br/>
+			<button type="button" class= "btn-next" onclick="myFunc1()" >Enter Next State</button>
+			<button type="button" class= "btn-show" onclick="myFunc2()" >Calculate Average of Entered States</button>
+		</p>
+	</div>
+	</center>
+	
+		<script>
+			
+			var min_temp=[0];
+			var max_temp=[0];
+			var temp=[0];
+			var c=0;
+			
+			function myFunc1()
+			{
+				var api ='http://api.openweathermap.org/data/2.5/weather?q=';
+				var city='';
+				var apikey ='&APPID=c53c65e7697a7c6b21c3204063aef169';
+				var units ='&units=metric';
+				
+				city=document.getElementById("city");
+				var url=api+city.value+apikey+units;
+				
+				$.getJSON(url, function(data){
+						if(data)
+						{
+							var tempMin=data.main.temp_min;
+							var tempMax =data.main.temp_max;
+							var tempp=data.main.temp;
+							c=c+1;
+							min_temp[c]=tempMin;
+							max_temp[c]=tempMax;
+							temp[c]=tempp;
+							alert("Enter next city.");
+						}
+				});
+			}
+			function myFunc2()
+			{
+				var Minsum=0;
+				var Maxsum=0;
+				var sum=0;
+				var avg1;
+				var avg2;
+				var avg3;
+				for(var i=1;i<=c;i++)
+				{
+					Minsum+=min_temp[i];
+					Maxsum+=max_temp[i];
+					sum+=temp[i];
+				}
+				
+				document.write('<center>Average Weather Conditions <br><br></center>');
+				avg1=Minsum/c;
+				document.write("<center>Minimum Average Temperature of given cities :"+avg1+"<br>"+"</center>");
+				avg2=Maxsum/c;
+				document.write("<center>Maximum Average Temperature of given cities:"+avg2+"<br>"+"</center>");
+				avg3=Maxsum/c;
+				document.write("<center>Average Temperature of given cities:"+avg3+"<br>"+"</center");
+				}
+		</script>
+</body>
+</html>
