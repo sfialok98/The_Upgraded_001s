@@ -8,8 +8,9 @@
     transition-duration: 0.4s;
     border-radius: 8px;
     font-size: 28px;
-    border: 2px solid #4CAF50;
-    background-color: red;
+    color: white;
+    border: 2px solid #873d48;
+    background-color: #873d48;
     color: black;
     border: 2px solid #BFF; /* Green */
 	}
@@ -17,22 +18,33 @@
 	{
 		background-color: #4CAF50; /* Green */
     color: white;
+
 	}
 	.city{
-		background-color: #c98986;
+		background-color: #873d48;
 		padding-bottom: 15px;
+		margin-left: 600px;
+	border-radius: 10px;
+		margin-right: 600px;
 	}
 	
-	.myForm{
-		background-color: #247ba0;
-		padding-bottom: 5px;
-	}
+	.btn-class{
+		background-color: #f8fcda;
+		margin-right: 600px;
+		margin-left: 600px;
+		border-radius: 10px;
+		}
+		.headd{
+			font-size: 60px;
+		}	
 </style>
 </head>
 <body background="img/weather_app_background.jpg">
 
 <p>
-<font size="30" color="#e2fadb"><marquee><big><b>Welcome to My Weather App</b></big></marquee></font>
+<div class="headd"> 
+<font color="#e2fadb"><marquee><b>Welcome to My Weather App</b></marquee></font>
+</div>
 <br>
 <br>
 <br>
@@ -45,12 +57,15 @@
 Name: <br />
     <input id="city" name="city" type="text" placeholder="Please enter city"/><br />
  </div>
-
+<div class="btn-class">
 <br />
-    <input id="submitweather" name="submitweather" class="btn btn-action" type="button" value="Submit"/>
+    <input id="submitweather" name="submitweather" class="btn btn-action" type="button" value="Search City"/>
+    <br>
+    </div>
 </center>
 
 </form>
+<center><div id="show"></div></center>
 </div>
 </p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
